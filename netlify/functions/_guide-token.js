@@ -1,0 +1,5 @@
+const crypto=require('node:crypto');
+const b64=o=>Buffer.from(JSON.stringify(o)).toString('base64url');
+function sign(payload){const secret=process.env.GUIDE_TOKEN_SECRET;if(!secret||secret.length<32)throw Error('Guide token secret is not configured');const data=b64(payload);return data+'.'+crypto.createHmac('sha256',secret).update(data).digest('base64url');}
+function verify(token){const secret=process.env.GUIDE_TOKEN_SECRET;if(!secret||!token||token.length>3000)return null;const [data,sig,...extra]=token.split('.');if(extra.length||!data||!sig)return null;const expect=crypto.createHmac('sha256',secret).update(data).digest();let actual;try{actual=Buffer.from(sig,'base64url')}catch{return null}if(actual.length!==expect.length||!crypto.timingSafeEqual(actual,expect))return null;try{const p=JSON.parse(Buffer.from(data,'base64url').toString());if(p.scope!=='buyer-guide'||!Number.isFinite(p.exp)||Date.now()>p.exp)return null;return p}catch{return null}}
+module.exports={sign,verify};
