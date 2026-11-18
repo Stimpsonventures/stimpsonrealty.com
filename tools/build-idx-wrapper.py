@@ -37,14 +37,31 @@ styles = re.sub(r"url\((['\"]?)(assets/)", lambda m: "url(%s%s/%s" % (m.group(1)
 chrome = chrome.replace(' class="active" href', " href")
 
 idx_css = """<style id="idx-wrapper-scope">
+/* IDX Broker's pages read these colour settings; this is what makes them match the site. */
+html:root{--idx-primary-color:#8a6410;--idx-button-color:#111;--idx-button-text-color:#fff;--idx-secondary-color:#625d54;--idx-secondary-button-color:#625d54;--idx-darkest-gray:#171717;--idx-lightest-gray:#f3f0e8;--idx-stroke-gray:#d9d4c8;--idx-font-family:Arial,Helvetica,sans-serif;--swiper-theme-color:#d6a52d}
 /* Keeps the site's display typography from blowing up IDX Broker's own markup. */
 .idx-shell{background:#fff;color:#171717;padding:36px 4.5vw 70px;min-height:60vh}
 .idx-shell h1,.idx-shell h2,.idx-shell h3,.idx-shell h4{font-size:revert;line-height:1.25;letter-spacing:normal;margin:revert}
 .idx-shell h1::after{content:none}
-.idx-shell a{color:#8a6410;text-decoration:underline;text-underline-offset:3px}
 .idx-shell img{transition:none}
-.idx-shell button,.idx-shell .btn{box-shadow:none;transform:none}
-@media(max-width:760px){.idx-shell{padding:24px 16px 56px}}
+.idx-shell button,.idx-shell .btn,.idx-shell a:hover{box-shadow:none;transform:none}
+.idx-shell #IDX-main,.idx-shell #IDX-main input,.idx-shell #IDX-main select,.idx-shell #IDX-main textarea,.idx-shell #IDX-main button{font-family:Arial,Helvetica,sans-serif}
+/* Buttons: square corners and the site's gold on hover. */
+.idx-shell #IDX-main .IDX-btn,.idx-shell #IDX-main .IDX-btn--rounded,.idx-shell #IDX-main #IDX-formSubmit,.idx-shell #IDX-main #IDX-submitBtn{border-radius:0}
+.idx-shell #IDX-main.IDX-wrapper-standard .IDX-btn.IDX-btn__PL:hover,.idx-shell #IDX-main #IDX-formSubmit:hover,.idx-shell #IDX-main #IDX-submitBtn:hover{background-color:#d6a52d;border-color:#d6a52d;color:#111}
+.idx-shell .idx-pagination li.IDX-active,.idx-shell .idx-pagination li.IDX-active a{color:#fff}
+.idx-shell #IDX-detailsTopNav a,.idx-shell #IDX-detailsHeaderActions a,.idx-shell #IDX-leadToolsBar a{color:#fff}
+/* Map search page: tabs and result-count pill are not covered by the colour settings. */
+.idx-shell #IDX-main .idx-nav-button{background-color:#111;border-color:#111;color:#fff;border-radius:0}
+.idx-shell #IDX-main .idx-nav-button.idx-nav-button__active,.idx-shell #IDX-main .idx-nav-button:hover{background-color:#d6a52d;border-color:#d6a52d;color:#111;opacity:1}
+.idx-shell #IDX-main #listing-results-count__chip{background-color:#111;color:#fff}
+/* Sign-up and login pages use an older template with its own blue links and notice box. */
+.idx-shell #IDX-main.IDX-category-user a,.idx-shell #IDX-main.IDX-category-user a span,.idx-shell #IDX-main.IDX-category-user a i{color:#8a6410}
+.idx-shell #IDX-main .IDX-alert-info,.idx-shell #IDX-main .IDX-alert-info p{background-color:#f3f0e8;border-color:#d9d4c8;color:#171717}
+/* Contact page: the agent details column was narrower than its text and clipped it. */
+.idx-shell #IDX-contactInformation{flex:0 0 250px;min-width:250px;justify-content:start;overflow:visible}
+.idx-shell #IDX-contactInfo{overflow-wrap:anywhere}
+@media(max-width:760px){.idx-shell{padding:24px 16px 56px}.idx-shell #IDX-contactInformation{flex:1 1 auto;min-width:0}}
 </style>"""
 
 body = chrome.replace("@@IDX@@", '<main class="idx-shell">\n<div id="idxStart"></div>\n<div id="idxStop"></div>\n</main>')

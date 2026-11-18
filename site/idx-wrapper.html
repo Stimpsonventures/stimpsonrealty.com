@@ -170,16 +170,33 @@ footer .footer-logo{width:247px;max-width:100%;height:auto;object-fit:contain}
 footer .silvercreek-logo-panel{width:160px;min-height:0;padding:8px 10px;max-width:100%;}
 footer .silvercreek-logo-panel img{width:100%;height:auto;max-height:58px;object-fit:contain;}
 @media(max-width:700px){footer .silvercreek-logo-panel{width:130px;min-height:0;padding:6px 8px;}footer .silvercreek-logo-panel img{max-height:48px;}}
-</style>
+</style><style id="idx-map-embed">.idx-state{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.idx-map{min-width:0;min-height:480px;background:#e7e2d8;overflow:hidden}.idx-map .IDX-mapWidgetWrap,.idx-map [id^="IDX-mapControlContainer"],.idx-map [id^="IDX-map-"]{width:100%!important;max-width:100%}.idx-map [id^="IDX-mapHeader-Search"]{display:none}@media(max-width:900px){.idx-state{grid-template-columns:1fr}.idx-map{min-height:380px}.idx-map [id^="IDX-mapControlContainer"],.idx-map [id^="IDX-map-"]{height:380px!important}}</style>
 <style id="idx-wrapper-scope">
+/* IDX Broker's pages read these colour settings; this is what makes them match the site. */
+html:root{--idx-primary-color:#8a6410;--idx-button-color:#111;--idx-button-text-color:#fff;--idx-secondary-color:#625d54;--idx-secondary-button-color:#625d54;--idx-darkest-gray:#171717;--idx-lightest-gray:#f3f0e8;--idx-stroke-gray:#d9d4c8;--idx-font-family:Arial,Helvetica,sans-serif;--swiper-theme-color:#d6a52d}
 /* Keeps the site's display typography from blowing up IDX Broker's own markup. */
 .idx-shell{background:#fff;color:#171717;padding:36px 4.5vw 70px;min-height:60vh}
 .idx-shell h1,.idx-shell h2,.idx-shell h3,.idx-shell h4{font-size:revert;line-height:1.25;letter-spacing:normal;margin:revert}
 .idx-shell h1::after{content:none}
-.idx-shell a{color:#8a6410;text-decoration:underline;text-underline-offset:3px}
 .idx-shell img{transition:none}
-.idx-shell button,.idx-shell .btn{box-shadow:none;transform:none}
-@media(max-width:760px){.idx-shell{padding:24px 16px 56px}}
+.idx-shell button,.idx-shell .btn,.idx-shell a:hover{box-shadow:none;transform:none}
+.idx-shell #IDX-main,.idx-shell #IDX-main input,.idx-shell #IDX-main select,.idx-shell #IDX-main textarea,.idx-shell #IDX-main button{font-family:Arial,Helvetica,sans-serif}
+/* Buttons: square corners and the site's gold on hover. */
+.idx-shell #IDX-main .IDX-btn,.idx-shell #IDX-main .IDX-btn--rounded,.idx-shell #IDX-main #IDX-formSubmit,.idx-shell #IDX-main #IDX-submitBtn{border-radius:0}
+.idx-shell #IDX-main.IDX-wrapper-standard .IDX-btn.IDX-btn__PL:hover,.idx-shell #IDX-main #IDX-formSubmit:hover,.idx-shell #IDX-main #IDX-submitBtn:hover{background-color:#d6a52d;border-color:#d6a52d;color:#111}
+.idx-shell .idx-pagination li.IDX-active,.idx-shell .idx-pagination li.IDX-active a{color:#fff}
+.idx-shell #IDX-detailsTopNav a,.idx-shell #IDX-detailsHeaderActions a,.idx-shell #IDX-leadToolsBar a{color:#fff}
+/* Map search page: tabs and result-count pill are not covered by the colour settings. */
+.idx-shell #IDX-main .idx-nav-button{background-color:#111;border-color:#111;color:#fff;border-radius:0}
+.idx-shell #IDX-main .idx-nav-button.idx-nav-button__active,.idx-shell #IDX-main .idx-nav-button:hover{background-color:#d6a52d;border-color:#d6a52d;color:#111;opacity:1}
+.idx-shell #IDX-main #listing-results-count__chip{background-color:#111;color:#fff}
+/* Sign-up and login pages use an older template with its own blue links and notice box. */
+.idx-shell #IDX-main.IDX-category-user a,.idx-shell #IDX-main.IDX-category-user a span,.idx-shell #IDX-main.IDX-category-user a i{color:#8a6410}
+.idx-shell #IDX-main .IDX-alert-info,.idx-shell #IDX-main .IDX-alert-info p{background-color:#f3f0e8;border-color:#d9d4c8;color:#171717}
+/* Contact page: the agent details column was narrower than its text and clipped it. */
+.idx-shell #IDX-contactInformation{flex:0 0 250px;min-width:250px;justify-content:start;overflow:visible}
+.idx-shell #IDX-contactInfo{overflow-wrap:anywhere}
+@media(max-width:760px){.idx-shell{padding:24px 16px 56px}.idx-shell #IDX-contactInformation{flex:1 1 auto;min-width:0}}
 </style>
 </head><body>
 <header class="nav"><a class="brand" href="https://stimpsonrealty.netlify.app/index.html"><img alt="Stimpson Realty" decoding="async" src="https://stimpsonrealty.netlify.app/assets/logo-72197d08.png"/></a><button aria-label="Menu" class="menu">☰</button><nav><a href="https://stimpsonrealty.netlify.app/index.html">Home</a><a href="https://stimpsonrealty.netlify.app/buy.html">Buy</a><a href="https://stimpsonrealty.netlify.app/sell.html">Sell</a><a href="https://stimpsonrealty.netlify.app/homes.html">Search Homes</a><a href="https://stimpsonrealty.netlify.app/financing.html">Financing</a><a href="https://stimpsonrealty.netlify.app/resources.html">Resources</a><a href="https://stimpsonrealty.netlify.app/about.html">About</a><a href="https://stimpsonrealty.netlify.app/reviews.html">Reviews</a><a class="gold-link" href="https://stimpsonrealty.netlify.app/contact.html">Let's Talk</a></nav></header>
@@ -187,6 +204,6 @@ footer .silvercreek-logo-panel img{width:100%;height:auto;max-height:58px;object
 <div id="idxStart"></div>
 <div id="idxStop"></div>
 </main>
-<footer><div class="footer-main"><img alt="Stimpson Realty" class="footer-logo" src="https://stimpsonrealty.netlify.app/assets/logo-72197d08.png"/><div><strong>Stimpson Realty</strong><br/>2002 Jennie Lee Dr, Idaho Falls, ID 83404<br/>704-775-3208<br/>stimpsonventures@gmail.com</div><div><strong>Brokerage Affiliation</strong><br/><span class="silvercreek-logo-panel"><img src="https://stimpsonrealty.netlify.app/assets/silvercreek-realty-group.webp" alt="Silvercreek Realty Group" loading="lazy"/></span><span class="silvercreek-name">Silvercreek Realty Group</span></div></div><div class="broker">Stimpson Realty · Rooted in Relationships · Silvercreek Realty Group</div><div class="legal">© 2026 Stimpson Realty. Equal Housing Opportunity. MLS property search is being prepared for launch.</div><div class="sr-privacy-link" style="margin-top:8px;font-size:11px"><a href="https://stimpsonrealty.netlify.app/privacy.html" style="color:#d6a52d">Privacy Policy</a></div></footer><div class="mobile-actions"><a href="https://stimpsonrealty.netlify.app/homes.html">⌕<span>Search Homes</span></a><a href="https://stimpsonrealty.netlify.app/sell.html#valuation">◇<span>Home Value</span></a><a href="https://stimpsonrealty.netlify.app/contact.html">✦<span>Contact</span></a></div>
+<footer><div class="footer-main"><img alt="Stimpson Realty" class="footer-logo" src="https://stimpsonrealty.netlify.app/assets/logo-72197d08.png"/><div><strong>Stimpson Realty</strong><br/>2002 Jennie Lee Dr, Idaho Falls, ID 83404<br/>704-775-3208<br/>stimpsonventures@gmail.com</div><div><strong>Brokerage Affiliation</strong><br/><span class="silvercreek-logo-panel"><img src="https://stimpsonrealty.netlify.app/assets/silvercreek-realty-group.webp" alt="Silvercreek Realty Group" loading="lazy"/></span><span class="silvercreek-name">Silvercreek Realty Group</span></div></div><div class="broker">Stimpson Realty · Rooted in Relationships · Silvercreek Realty Group</div><div class="legal">© 2026 Stimpson Realty. Equal Housing Opportunity.</div><div class="sr-privacy-link" style="margin-top:8px;font-size:11px"><a href="https://stimpsonrealty.netlify.app/privacy.html" style="color:#d6a52d">Privacy Policy</a></div></footer><div class="mobile-actions"><a href="https://stimpsonrealty.netlify.app/homes.html">⌕<span>Search Homes</span></a><a href="https://stimpsonrealty.netlify.app/sell.html#valuation">◇<span>Home Value</span></a><a href="https://stimpsonrealty.netlify.app/contact.html">✦<span>Contact</span></a></div>
 <script>document.querySelectorAll('.menu').forEach(m=>m.addEventListener('click',()=>m.parentElement.querySelector('nav').classList.toggle('open')));</script>
 </body></html>
