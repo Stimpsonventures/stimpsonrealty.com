@@ -24,3 +24,22 @@
   var city=new URLSearchParams(window.location.search).get('city');
   if(city){cityInput.value=city; if(idx.live&&idx.cityId(city)) go(filters(),true);}
 })();
+
+/* Embedded map on the Search Homes page.
+   IDX Broker only serves the map widget to the one page address saved in the widget's settings
+   ("Page the Map will be used on"), which must be on the account's own domain. Anywhere else the
+   widget hangs on "Loading...", so the page shows a link tile unless the address matches. */
+(function(){
+  var idx=window.StimpsonIDX, box=document.getElementById('srMap');
+  if(!idx||!box) return;
+  var links=box.querySelectorAll('a'), mapLink=document.getElementById('srMapLink');
+  for(var i=0;i<links.length;i++) links[i].href=idx.mapUrl();
+  if(mapLink) mapLink.href=idx.mapUrl();
+  var w=idx.mapWidget;
+  if(!w||!w.page||(location.host+location.pathname)!==w.page||location.search) return;
+  box.innerHTML='';
+  var s=document.createElement('script');
+  s.id='idxwidgetsrc-'+w.id; s.charset='UTF-8';
+  s.src='https://'+idx.host+'/idx/mapwidgetjs.php?widgetid='+w.id;
+  box.appendChild(s);
+})();

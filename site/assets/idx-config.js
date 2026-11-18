@@ -4,6 +4,10 @@
   var cfg={
     host:'stimpsonrealty.idxbroker.com', // change to search.stimpsonrealty.com once the custom domain is set up
     live:true,
+    // Embedded map widget. `page` must equal the address saved in IDX Broker under Designs > Widgets >
+    // Map Search > "Page the Map will be used on" (host + path, e.g. 'stimpsonrealty.com/homes.html').
+    // Leave null until the site is live on stimpsonrealty.com; the page shows a link tile instead.
+    mapWidget:{id:'29558',page:null},
     idxID:'b370',                        // Snake River MLS
     // City name -> Snake River MLS cityID, ordered by active listing count (from the IDX Broker API).
     cities:{"IDAHO FALLS":"22399","RIGBY":"39387","REXBURG":"39097","ISLAND PARK":"22832","BLACKFOOT":"4286","AMMON":"1120","POCATELLO":"37157","SHELLEY":"42566","SALMON":"41128","ASHTON":"1827","ST ANTHONY":"40784","CHUBBUCK":"8732","IRWIN":"22796","ROBERTS":"39680","CHALLIS":"8124","SUGAR CITY":"45120","AMERICAN FALLS":"1069","ARCO":"1486","DRIGGS":"12778","MENAN":"29667","MACKAY":"27811","TETONIA":"46110","DOWNEY":"12688","RIRIE":"39490","VICTOR":"49037","LAVA HOT SPRINGS":"25751","SWAN VALLEY":"45504","FIRTH":"16012","IONA":"22679","LEADORE":"25874","MOORE":"31063","CARMEN":"7358","NORTH FORK":"33327","PINGREE":"36737","GRACE":"18573","INKOM":"22627","TERRETON":"46086","DUBOIS":"12855","MCCAMMON":"29269","CHESTER":"8483","SODA SPRINGS":"43401","ABERDEEN":"106","GIBBONSVILLE":"17827","MALAD":"28009","ARIMO":"1559","BLOOMINGTON":"4496","FELT":"15828","FISH HAVEN":"16020","MARYSVILLE":"28779","MONTPELIER":"30991","SHOUP":"42812","SWANLAKE":"45507","TENDOY":"46032","TWIN FALLS":"47240","UCON":"47331","BANCROFT":"2473","CLAYTON":"9043","FRANKLIN":"16876","HOLBROOK":"21492","MONTEVIEW":"30922","PALISADES":"35201","PRESTON":"37808","ROCKLAND":"39863","ATOMIC CITY":"1966","BASALT":"2747","CAREY":"7284","CLIFTON":"9220","GOODING":"18425","HAGERMAN":"19650","HOWE":"22001","JEROME":"23312","LEMHI":"26079","LEWISVILLE":"26300","MALTA":"28053","MAY":"28980","NEWDALE":"32813","PARIS":"35469","RUPERT":"40535","SPENCER":"44053","STANLEY":"44424","WARM RIVER":"49941","WEISER":"50482"},
