@@ -12,7 +12,7 @@ changes:  python3 tools/build-idx-wrapper.py [https://stimpsonrealty.com]
 import re, sys, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BASE = (sys.argv[1] if len(sys.argv) > 1 else "https://stimpsonrealty.netlify.app").rstrip("/")
+BASE = (sys.argv[1] if len(sys.argv) > 1 else "https://stimpsonrealty.com").rstrip("/")
 src = (ROOT / "site/homes.html").read_text()
 
 styles = "".join(re.findall(r"<style[^>]*>.*?</style>", src, re.S))
