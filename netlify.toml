@@ -12,3 +12,41 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
+
+# Secondary domain -> primary domain, permanent. These only match once
+# yourhouseidaho.com is added to this Netlify site as a domain alias.
+# (www.stimpsonrealty.com -> stimpsonrealty.com is handled by Netlify itself
+# when the apex is set as the primary domain.)
+[[redirects]]
+  from = "https://yourhouseidaho.com/*"
+  to = "https://stimpsonrealty.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://yourhouseidaho.com/*"
+  to = "https://stimpsonrealty.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.yourhouseidaho.com/*"
+  to = "https://stimpsonrealty.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.yourhouseidaho.com/*"
+  to = "https://stimpsonrealty.com/:splat"
+  status = 301
+  force = true
+
+# AT CUTOVER ONLY: uncomment once stimpsonrealty.com serves this site AND the IDX
+# wrapper has been rebuilt for it (python3 tools/build-idx-wrapper.py https://stimpsonrealty.com)
+# and IDX Broker's wrapper URL updated. Enabling it earlier sends the staging site
+# and IDX Broker's wrapper fetch to a domain that is not live yet.
+# [[redirects]]
+#   from = "https://stimpsonrealty.netlify.app/*"
+#   to = "https://stimpsonrealty.com/:splat"
+#   status = 301
+#   force = true
