@@ -61,6 +61,18 @@ html:root{--idx-primary-color:#8a6410;--idx-button-color:#111;--idx-button-text-
 /* Contact page: the agent details column was narrower than its text and clipped it. */
 .idx-shell #IDX-contactInformation{flex:0 0 250px;min-width:250px;justify-content:start;overflow:visible}
 .idx-shell #IDX-contactInfo{overflow-wrap:anywhere}
+/* Registration pop-up (IDX Broker adds it to the page body, outside .idx-shell). */
+.ui-widget-overlay{background:#000!important;opacity:.75!important}
+.ui-dialog.IDX-registrationModal{font-family:Arial,Helvetica,sans-serif;border:0;border-radius:0;padding:0;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.6);max-width:calc(100vw - 32px)}
+.IDX-registrationModal .ui-dialog-titlebar{background:#111;border:0;border-radius:0;padding:18px 24px;border-bottom:3px solid #d6a52d}
+.IDX-registrationModal .ui-dialog-title{float:none;margin:0;font-size:16px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.IDX-registrationModal .ui-dialog-titlebar-close{top:50%;right:18px;margin-top:-10px;opacity:.8;filter:invert(1)}
+.IDX-registrationModal #IDX-registration{padding:22px 24px;color:#171717;font-size:14px;line-height:1.5;background:#fff}
+.IDX-registrationModal label{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#625d54}
+.IDX-registrationModal input[type=text],.IDX-registrationModal input[type=email],.IDX-registrationModal input[type=tel],.IDX-registrationModal input[type=password]{width:100%;box-sizing:border-box;padding:11px 12px;margin-top:4px;border:1px solid #d9d4c8;border-radius:0;font-size:15px;font-family:inherit;background:#fff;color:#171717}
+.IDX-registrationModal #IDX-submitBtn,.IDX-registrationModal .IDX-btn-primary{display:block;width:100%;background:#111;color:#fff;border:1px solid #111;border-radius:0;padding:15px;margin-top:6px;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-family:inherit;cursor:pointer}
+.IDX-registrationModal #IDX-submitBtn:hover,.IDX-registrationModal .IDX-btn-primary:hover{background:#d6a52d;border-color:#d6a52d;color:#111}
+.IDX-registrationModal a{color:#8a6410}
 @media(max-width:760px){.idx-shell{padding:24px 16px 56px}.idx-shell #IDX-contactInformation{flex:1 1 auto;min-width:0}}
 </style>"""
 
