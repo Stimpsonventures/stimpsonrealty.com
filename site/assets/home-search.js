@@ -36,7 +36,7 @@
   for(var i=0;i<links.length;i++) links[i].href=idx.mapUrl();
   if(mapLink) mapLink.href=idx.mapUrl();
   var w=idx.mapWidget;
-  if(!w||!w.page||(location.host+location.pathname)!==w.page||location.search) return;
+  if(!w||!w.page||(location.host+location.pathname)!==w.page) return;
   box.innerHTML='';
   var s=document.createElement('script');
   s.id='idxwidgetsrc-'+w.id; s.charset='UTF-8';
